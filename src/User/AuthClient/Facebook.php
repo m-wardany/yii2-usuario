@@ -32,6 +32,7 @@ class Facebook extends BaseFacebook implements AuthClientInterface
     public function getUsername()
     {
         /* returns the e-mail as it corresponds with the username */
-        return $this->getEmail();
+        $splitter = explode('@', $this->client->getEmail());
+        return $splitter[0];
     }
 }
