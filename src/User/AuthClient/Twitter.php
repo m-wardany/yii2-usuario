@@ -28,6 +28,8 @@ class Twitter extends BaseTwitter implements AuthClientInterface
 
     public function getEmail()
     {
-        return null;
+        return isset($this->getUserAttributes()['email'])
+            ? $this->getUserAttributes()['email']
+            : null;
     }
 }
